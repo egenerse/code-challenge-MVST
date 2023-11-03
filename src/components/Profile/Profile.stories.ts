@@ -29,15 +29,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const allInfo = {
-  login: "egenerse",
+  login: 'egenerse',
   name: 'Ege',
-  avatarUrl: "https://avatars.githubusercontent.com/u/50779105?v=4",
+  avatarUrl: 'https://avatars.githubusercontent.com/u/50779105?v=4',
   bio: 'Web developer',
   email: 'egenerse@gmail.com',
   totalFollower: 24,
   totalFollowing: 30,
   location: 'Munich',
-}
+};
 
 // Create a new object without the 'name' field
 const objectWithNoName = (({ name, ...rest }) => rest)(allInfo);
@@ -48,38 +48,35 @@ const objectWithNoFollwerInfo = (({ totalFollower, ...rest }) => rest)(allInfo);
 const objectWithNoFollowing = (({ totalFollowing, ...rest }) => rest)(allInfo);
 const objectWithNoLocation = (({ location, ...rest }) => rest)(allInfo);
 
-
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const AllInfo: Story = {
-  args: allInfo
+  args: allInfo,
 };
 
 export const NoName: Story = {
-  args: objectWithNoName
+  args: objectWithNoName,
 };
 
 export const NoAvatar: Story = {
-  args: objectWithNoAvatar
+  args: objectWithNoAvatar,
 };
 
 export const NoBio: Story = {
-  args: objectWithNoBio
+  args: objectWithNoBio,
 };
 
 export const NoEmail: Story = {
-  args: objectWithNoEmail
+  args: objectWithNoEmail,
 };
 
 export const NoFollowerInfo: Story = {
-  args:
-    objectWithNoFollwerInfo
+  args: objectWithNoFollwerInfo,
 };
 
 export const NoFollowingInfo: Story = {
-  args: objectWithNoFollowing
+  args: objectWithNoFollowing,
 };
 
 export const NoLocation: Story = {
-  args: objectWithNoLocation
+  args: objectWithNoLocation,
 };
-

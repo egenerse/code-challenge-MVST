@@ -14,19 +14,30 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    options: { defaultValue: [{ label: 'HTML', value: 'HTML' }, { label: 'JavaScript', value: 'JavaScript' }, { label: 'TypeScript', value: 'TypeScript' }, { label: 'CSS', value: 'CSS' }] },
-    onChange: { defaultValue: () => { } }
-  }
+    options: {
+      defaultValue: [
+        { label: 'HTML', value: 'HTML' },
+        { label: 'JavaScript', value: 'JavaScript' },
+        { label: 'TypeScript', value: 'TypeScript' },
+        { label: 'CSS', value: 'CSS' },
+      ],
+    },
+    onChange: { defaultValue: () => {} },
+  },
 } satisfies Meta<typeof CustomSelect>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
-    options: [{ label: 'HTML', value: 'HTML' }, { label: 'JavaScript', value: 'JavaScript' }, { label: 'TypeScript', value: 'TypeScript' }, { label: 'CSS', value: 'CSS' }],
-    onChange: () => { }
+    options: [
+      { label: 'HTML', value: 'HTML' },
+      { label: 'JavaScript', value: 'JavaScript' },
+      { label: 'TypeScript', value: 'TypeScript' },
+      { label: 'CSS', value: 'CSS' },
+    ],
+    onChange: () => {},
   },
 };

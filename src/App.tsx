@@ -16,13 +16,10 @@ const client = new ApolloClient({
 });
 
 const theme = createTheme({
-
   typography: {
-
     fontSize: 16,
     allVariants: { color: '#000' },
   },
-
 });
 
 export default function App() {
@@ -30,8 +27,8 @@ export default function App() {
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Routes >
-            <Route ErrorBoundary={() => <ErrorPage />} path='/' element={<NavBar />}>
+          <Routes>
+            <Route ErrorBoundary={() => <ErrorPage />} path="/" element={<NavBar />}>
               <Route index element={<Home />} />
               <Route path="/repos/:username" element={<GitHubInfo />} />
               <Route path="*" element={<NotFoundPage />} />

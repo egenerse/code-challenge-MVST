@@ -16,19 +16,19 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    repositories: { description: 'Array of repositories', },
+    repositories: { description: 'Array of repositories' },
   },
-  decorators: [(Story) => (
-    <MemoryRouter initialEntries={['/repos/egenerse']}>
-      <Story />
-    </MemoryRouter>
-  )]
+  decorators: [
+    (Story) => (
+      <MemoryRouter initialEntries={['/repos/egenerse']}>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 } satisfies Meta<typeof Repositories>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-
 
 export const Default: Story = {
   args: {

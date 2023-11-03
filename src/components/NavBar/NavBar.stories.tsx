@@ -1,4 +1,3 @@
-
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Meta, StoryObj } from '@storybook/react';
 import NavBar from './NavBar';
@@ -16,20 +15,29 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    options: { defaultValue: [{ label: 'HTML', value: 'HTML' }, { label: 'JavaScript', value: 'JavaScript' }, { label: 'TypeScript', value: 'TypeScript' }, { label: 'CSS', value: 'CSS' }] },
-    onChange: { defaultValue: () => { } }
+    options: {
+      defaultValue: [
+        { label: 'HTML', value: 'HTML' },
+        { label: 'JavaScript', value: 'JavaScript' },
+        { label: 'TypeScript', value: 'TypeScript' },
+        { label: 'CSS', value: 'CSS' },
+      ],
+    },
+    onChange: { defaultValue: () => {} },
   },
-  decorators: [(Story) => (<MemoryRouter>
-    <div style={{ width: '100vw' }}>
-      <Story />
-    </div>
-  </MemoryRouter>)]
-
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <div style={{ width: '100vw' }}>
+          <Story />
+        </div>
+      </MemoryRouter>
+    ),
+  ],
 } satisfies Meta<typeof NavBar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {};

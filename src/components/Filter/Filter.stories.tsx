@@ -15,20 +15,18 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    repositories: { description: 'Array of repositories', },
+    repositories: { description: 'Array of repositories' },
     handleShownRepositories: { description: 'Calls the the function with props' },
-  }
+  },
 } satisfies Meta<typeof Filter>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
-
 export const Default: Story = {
   args: {
     repositories: repositoriesResponse,
-    handleShownRepositories: () => { }
+    handleShownRepositories: () => {},
   },
 };
 
@@ -36,6 +34,6 @@ export const Default: Story = {
 export const EmptyRepoNoFunction: Story = {
   args: {
     repositories: [],
-    handleShownRepositories: () => { }
+    handleShownRepositories: () => {},
   },
 };

@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const getUserGithubInfo = gql`
   query getUserGithubInfo($username: String!) {
@@ -24,7 +24,7 @@ export const getUserGithubInfo = gql`
             nodes {
               name
             }
-          }	
+          }
         }
       }
     }
@@ -35,26 +35,26 @@ export interface Repo {
   name: string;
   description?: string | null;
   url: string;
-  __typename: string,
+  __typename: string;
   languages: {
-    __typename: string,
+    __typename: string;
     nodes: {
-      __typename: string,
-      name: string
-    }[]
-  }
+      __typename: string;
+      name: string;
+    }[];
+  };
 }
 
 export interface User {
   user: {
     login: string;
-    name: string,
+    name: string;
     avatarUrl: string;
     followers: {
-      totalCount: number
+      totalCount: number;
     };
     following: {
-      totalCount: number
+      totalCount: number;
     };
     bio: string;
     email: string;
@@ -62,5 +62,5 @@ export interface User {
     repositories: {
       nodes: Repo[];
     };
-  }
+  };
 }
