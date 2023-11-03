@@ -16,7 +16,7 @@ const meta = {
   decorators: [
     (Story) => (
       <MemoryRouter>
-        <div style={{ width: '100vw', height: '100' }} >
+        <div style={{ width: '100vw', height: '100' }}>
           <Story />
         </div>
       </MemoryRouter>
