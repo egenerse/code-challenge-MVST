@@ -1,4 +1,6 @@
-export const getUserGithubInfo = `
+import { gql } from "@apollo/client";
+
+export const getUserGithubInfo = gql`
   query getUserGithubInfo($username: String!) {
     user(login: $username) {
       login

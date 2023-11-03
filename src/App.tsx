@@ -3,17 +3,15 @@ import NotFoundPage from './pages/NotFoundPage';
 import Home from './pages/Home/Home';
 import GitHubInfo from './pages/GitHubInfo';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Client, cacheExchange, Provider as UrqlProvider, fetchExchange } from 'urql';
 import ErrorPage from './pages/ErrorPage';
 import NavBar from './components/NavBar';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-const client: Client = new Client({
-  url: 'https://api.github.com/graphql',
-  exchanges: [cacheExchange, fetchExchange],
-  fetchOptions: {
-    headers: {
-      Authorization: `Bearer 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`,
-    },
+const client = new ApolloClient({
+  uri: 'https://api.github.com/graphql',
+  cache: new InMemoryCache(),
+  headers: {
+    Authorization: `Bearer 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`,
   },
 });
 
@@ -29,7 +27,7 @@ const theme = createTheme({
 
 export default function App() {
   return (
-    <UrqlProvider value={client}>
+    <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes >
@@ -41,6 +39,6 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
-    </UrqlProvider>
+    </ApolloProvider>
   );
 }

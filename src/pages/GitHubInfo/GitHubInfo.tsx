@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import Repositories from '../../components/Repositories';
-import { useQuery } from 'urql';
+import { useQuery } from '@apollo/client';
 import { User, getUserGithubInfo } from '../../queries/getUserGithubInfo';
 import UserNotFound from '../UserNotFound';
 import ErrorPage from '../ErrorPage/ErrorPage';
@@ -10,16 +10,15 @@ import Loading from '../Loading';
 
 export default function GitHubInfo() {
   const { username } = useParams()
-  const [result] = useQuery<User>({
-    query: getUserGithubInfo,
-    variables: { username },
-  });
+  const { data, loading, error } = useQuery<User>(getUserGithubInfo, {
+    variables: { username }
+  }
+  );
 
-  const { data, fetching, error } = result;
 
   const user = data?.user
 
-  if (fetching) return <Loading />;
+  if (loading) return <Loading />;
   if (!user) return <UserNotFound />
   if (error) return <ErrorPage />
 
