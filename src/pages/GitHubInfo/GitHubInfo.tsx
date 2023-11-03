@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import Repositories from '../../components/Repositories';
 import { useQuery } from '@apollo/client';
-import { User, getUserGithubInfo } from '../../queries/getUserGithubInfo';
+import { User, getUserGithubInfo } from '../../graphql/queries/getUserGithubInfo';
 import UserNotFound from '../UserNotFound';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Profile from '../../components/Profile';

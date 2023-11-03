@@ -1,5 +1,5 @@
 import { SelectOption } from '../components/CustomSelect';
-import { Repo } from '../queries/getUserGithubInfo';
+import { Repo } from '../graphql/queries/getUserGithubInfo';
 
 export function getDifferentLanguagesOptions(nodes?: Repo[]): SelectOption[] {
   if (!nodes) return [];

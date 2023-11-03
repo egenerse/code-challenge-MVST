@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Box, Divider, List, ListItem, Pagination, Typography } from '@mui/material';
-import { Repo } from '../../queries/getUserGithubInfo';
+import { Repo } from '../../graphql/queries/getUserGithubInfo';
 import Filter from '../Filter';
 
 interface RepositoriesProps {

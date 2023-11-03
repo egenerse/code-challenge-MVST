@@ -1,6 +1,6 @@
 import { Box, TextField } from '@mui/material';
 import { ChangeEvent, useState, useMemo } from 'react';
-import { Repo } from '../../queries/getUserGithubInfo';
+import { Repo } from '../../graphql/queries/getUserGithubInfo';
 import { getDifferentLanguagesOptions, getFilterdRepositories } from '../../utils/githubReposUtils';
 import { CustomSelect } from '../CustomSelect';
 

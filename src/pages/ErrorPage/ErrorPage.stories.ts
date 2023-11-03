@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Meta, StoryObj } from '@storybook/react';
-import NavBar from './NavBar';
-import { MemoryRouter } from 'react-router-dom';
+import ErrorPage from './ErrorPage';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Components/NavBar',
-  component: NavBar,
+  title: 'Pages/ErrorPage',
+  component: ErrorPage,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -14,16 +13,8 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <div style={{ width: '100vw' }}>
-          <Story />
-        </div>
-      </MemoryRouter>
-    ),
-  ],
-} satisfies Meta<typeof NavBar>;
+
+} satisfies Meta<typeof ErrorPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
