@@ -47,19 +47,23 @@ export interface Repo {
 
 export interface User {
   user: {
+    __typename: string;
     login: string;
     name: string;
     avatarUrl: string;
     followers: {
+      __typename: string;
       totalCount: number;
     };
     following: {
+      __typename: string;
       totalCount: number;
     };
     bio: string;
     email: string;
     location: string;
     repositories: {
+      __typename: string;
       nodes: Repo[];
     };
   };

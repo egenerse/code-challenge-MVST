@@ -14,6 +14,8 @@ export default function GitHubInfo() {
     variables: { username },
   });
 
+  console.log('DEBUG data,', JSON.stringify(data));
+
   const user = data?.user;
 
   if (loading) return <Loading />;

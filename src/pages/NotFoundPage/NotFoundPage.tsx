@@ -1,11 +1,21 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export default function NotFoundPage() {
+  const navigate = useNavigate();
+
   return (
-    <Box>
+    <Box sx={{ display: 'flex', alignContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <Typography variant="h2">404 - Page Not Found</Typography>
       <Typography>The requested page does not exist.</Typography>
-      {/* You can add a link to the homepage or another relevant page here */}
+      <Button
+        variant="contained"
+        onClick={() => {
+          navigate('/');
+        }}
+      >
+        <Typography>Go To Home Page</Typography>
+      </Button>
     </Box>
   );
 }
