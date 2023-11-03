@@ -1,8 +1,8 @@
-import { Box, SelectChangeEvent, TextField } from '@mui/material'
+import { Box, TextField } from '@mui/material'
 import { ChangeEvent, useState, useMemo } from 'react'
-import CustomSelect from './CustomSelect'
 import { Repo } from '../queries/getUserGithubInfo';
 import { getDifferentLanguagesOptions, getFilterdRepositories } from '../utils/githubReposUtils';
+import { CustomSelect } from './CustomSelect';
 
 
 interface FilterProps {
@@ -14,19 +14,18 @@ export default function Filter({ repositories, handleShownRepositories }: Filter
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const allLanguages = useMemo(() => getDifferentLanguagesOptions(repositories), [repositories])
 
-  const handleLanguageChange = (event: SelectChangeEvent<string>) => {
-    const newSelectedLanguage = event.target.value
-    const filteredRepos = getFilterdRepositories(repositories, searchQuery, newSelectedLanguage)
-    setSelectedLanguage(newSelectedLanguage);
-    handleShownRepositories(filteredRepos)
-  };
-
   const handleSearchQuesyChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value
     const filteredRepos = getFilterdRepositories(repositories, newQuery, selectedLanguage)
     setSearchQuery(newQuery)
     handleShownRepositories(filteredRepos)
   }
+
+  const handleLanguageChange = (newSelectedLanguage: string) => {
+    const filteredRepos = getFilterdRepositories(repositories, searchQuery, newSelectedLanguage)
+    setSelectedLanguage(newSelectedLanguage);
+    handleShownRepositories(filteredRepos)
+  };
 
   return (
     <Box sx={{
@@ -36,11 +35,9 @@ export default function Filter({ repositories, handleShownRepositories }: Filter
       flexWrap: 'wrap',
       gap: 2
     }}>
-      <TextField placeholder='Find a Repository' variant="outlined" value={searchQuery} onChange={handleSearchQuesyChange} sx={{ display: 'flex' }} />
-
+      <TextField placeholder='Find a Repository' variant="outlined" value={searchQuery} onChange={handleSearchQuesyChange} />
       <CustomSelect
         options={allLanguages}
-        value={selectedLanguage}
         onChange={handleLanguageChange}
       />
     </Box>

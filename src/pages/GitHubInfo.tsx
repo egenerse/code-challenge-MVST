@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import Profile from '../components/Profile';
 import Repositories from '../components/Repositories';
 import { useQuery } from 'urql';
 import { User, getUserGithubInfo } from '../queries/getUserGithubInfo';
 import UserNotFound from '../components/UserNotFound';
 import ErrorPage from './ErrorPage';
+import Profile from '../components/Profile';
 
 export default function GitHubInfo() {
   const { username } = useParams()
@@ -13,11 +13,10 @@ export default function GitHubInfo() {
     query: getUserGithubInfo,
     variables: { username },
   });
-  console.log("DEBUG result,", result)
+
   const { data, fetching, error } = result;
 
   const user = data?.user
-
 
   if (fetching) return <div>Loading...</div>;
   if (!user) return <UserNotFound />
@@ -27,12 +26,9 @@ export default function GitHubInfo() {
 
   return (
     <Box sx={{ display: "flex", flex: 1, flexDirection: 'column', mx: 4 }}>
-      <Typography variant='h5' color='common.black'>GitHub Repositories for {username}</Typography>
-
+      <Typography variant='h5' color='common.black'>Welcome to GitHub Repositories for {username}</Typography>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 2 }}>
-
-        <Profile avatarUrl={user?.avatarUrl} bio={user?.bio} totalFollower={user?.followers.totalCount} totalFollowing={user?.following.totalCount} email={user?.email} />
-        {/* <Profile bio="1biooo" totalFollower={123} totalFollowing={1111} email="egenerse" /> */}
+        <Profile login={user.login} name={user?.name} avatarUrl={user?.avatarUrl} bio={user?.bio} totalFollower={user?.followers.totalCount} totalFollowing={user?.following.totalCount} email={user?.email} location={user?.location} />
         <Repositories repositories={repositories} />
       </Box>
     </Box >

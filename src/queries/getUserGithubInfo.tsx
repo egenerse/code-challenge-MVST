@@ -2,6 +2,7 @@ export const getUserGithubInfo = `
   query getUserGithubInfo($username: String!) {
     user(login: $username) {
       login
+      name
       avatarUrl
       followers {
         totalCount
@@ -11,6 +12,7 @@ export const getUserGithubInfo = `
       }
       bio
       email
+      location
       repositories(first: 100) {
         nodes {
           name
@@ -41,6 +43,7 @@ export interface Repo {
 export interface User {
   user: {
     login: string;
+    name: string,
     avatarUrl: string;
     followers: {
       totalCount: number
@@ -50,6 +53,7 @@ export interface User {
     };
     bio: string;
     email: string;
+    location: string;
     repositories: {
       nodes: Repo[];
     };

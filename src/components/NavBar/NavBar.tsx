@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from '@mui/material'
 import { Outlet, useNavigate } from 'react-router-dom'
 
-export default function DashLayout() {
+export default function NavBar() {
 
   const navigate = useNavigate()
   return (

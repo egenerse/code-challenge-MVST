@@ -1,11 +1,11 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import NoMatch from './pages/NoMatch';
-import DashLayout from './components/DashLayout';
 import Home from './pages/Home';
 import GitHubInfo from './pages/GitHubInfo';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Client, cacheExchange, Provider as UrqlProvider, fetchExchange } from 'urql';
 import ErrorPage from './pages/ErrorPage';
+import NavBar from './components/NavBar';
 
 const client: Client = new Client({
   url: 'https://api.github.com/graphql',
@@ -19,29 +19,12 @@ const client: Client = new Client({
 
 const theme = createTheme({
 
-  // palette: {
-
-  //   primary: { main: 'black' },
-  // },
   typography: {
-    fontFamily: 'Arial, sans-serif',
+
     fontSize: 16,
     allVariants: { color: '#000' },
-    // You can customize other typography settings here.
   },
-  // components: {
-  //   MuiButton: {
-  //     styleOverrides: {
-  //       root: {
-  //         borderColor: 'black',
-  //         color: 'black',
-  //         '&:hover': {
-  //           backgroundColor: '#fff', // Hover background color for primary buttons
-  //         },
-  //       },
-  //     },
-  //   },
-  // },
+
 });
 
 export default function App() {
@@ -50,7 +33,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes >
-            <Route ErrorBoundary={() => <ErrorPage />} path='/' element={<DashLayout />}>
+            <Route ErrorBoundary={() => <ErrorPage />} path='/' element={<NavBar />}>
               <Route index element={<Home />} />
               <Route path="/repos/:username" element={<GitHubInfo />} />
               <Route path="*" element={<NoMatch />} />

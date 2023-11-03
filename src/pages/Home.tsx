@@ -12,14 +12,7 @@ export default function Home() {
   }
 
   return (
-    <Box sx={{
-      // display: 'flex',
-      // justifyContent: 'center',
-      // alignItems: 'center',
-      // backgroundColor: 'pink',
-      // width: '100%',
-      // height: '100%'
-    }}>
+    < >
       <Box sx={{
         position: "absolute",
         top: '50%',
@@ -32,7 +25,8 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column'
       }}>
-        <Typography fontSize={'3rem'} textAlign='center'>Welcome to <Typography fontWeight='bold' fontSize={'3rem'}>Ege Nerse's</Typography> CodeChallenge for MVST</Typography>
+        <Typography fontSize={'3rem'} textAlign='center'>Welcome to Code Challenge for MVST</Typography>
+        <Typography fontSize={'3rem'} textAlign='center'>Search Github User</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <InputLabel htmlFor='username'>Username: </InputLabel>
           <TextField sx={{ marginLeft: 1 }} id="username" value={username} onChange={(event) => setUsername(event.target.value)} onKeyDown={(e) => {
@@ -44,9 +38,9 @@ export default function Home() {
         </Box>
         <Button variant='contained' sx={{ margin: 2 }} onClick={handlePress}
           disabled={username === ""}
-        >Search Repose</Button>
+        >Search</Button>
       </Box >
-    </Box >
+    </ >
 
   );
 }
