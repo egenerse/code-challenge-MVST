@@ -6,6 +6,7 @@ import { User, getUserGithubInfo } from '../../queries/getUserGithubInfo';
 import UserNotFound from '../UserNotFound';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Profile from '../../components/Profile';
+import Loading from '../Loading';
 
 export default function GitHubInfo() {
   const { username } = useParams()
@@ -18,7 +19,7 @@ export default function GitHubInfo() {
 
   const user = data?.user
 
-  if (fetching) return <div>Loading...</div>;
+  if (fetching) return <Loading />;
   if (!user) return <UserNotFound />
   if (error) return <ErrorPage />
 
