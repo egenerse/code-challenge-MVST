@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import NoMatch from './pages/NoMatch';
-import Home from './pages/Home';
+import NotFoundPage from './pages/NotFoundPage';
+import Home from './pages/Home/Home';
 import GitHubInfo from './pages/GitHubInfo';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Client, cacheExchange, Provider as UrqlProvider, fetchExchange } from 'urql';
@@ -36,7 +36,7 @@ export default function App() {
             <Route ErrorBoundary={() => <ErrorPage />} path='/' element={<NavBar />}>
               <Route index element={<Home />} />
               <Route path="/repos/:username" element={<GitHubInfo />} />
-              <Route path="*" element={<NoMatch />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

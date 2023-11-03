@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import Repositories from '../components/Repositories';
+import Repositories from '../../components/Repositories';
 import { useQuery } from 'urql';
-import { User, getUserGithubInfo } from '../queries/getUserGithubInfo';
-import UserNotFound from '../components/UserNotFound';
-import ErrorPage from './ErrorPage';
-import Profile from '../components/Profile';
+import { User, getUserGithubInfo } from '../../queries/getUserGithubInfo';
+import UserNotFound from '../UserNotFound';
+import ErrorPage from '../ErrorPage/ErrorPage';
+import Profile from '../../components/Profile';
 
 export default function GitHubInfo() {
   const { username } = useParams()

@@ -31,10 +31,13 @@ export const getUserGithubInfo = `
 
 export interface Repo {
   name: string;
-  description: string;
+  description?: string | null;
   url: string;
+  __typename: string,
   languages: {
+    __typename: string,
     nodes: {
+      __typename: string,
       name: string
     }[]
   }

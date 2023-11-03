@@ -1,8 +1,8 @@
 import { Box, TextField } from '@mui/material'
 import { ChangeEvent, useState, useMemo } from 'react'
-import { Repo } from '../queries/getUserGithubInfo';
-import { getDifferentLanguagesOptions, getFilterdRepositories } from '../utils/githubReposUtils';
-import { CustomSelect } from './CustomSelect';
+import { Repo } from '../../queries/getUserGithubInfo';
+import { getDifferentLanguagesOptions, getFilterdRepositories } from '../../utils/githubReposUtils';
+import { CustomSelect } from '../CustomSelect';
 
 
 interface FilterProps {
