@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Meta, StoryObj } from '@storybook/react';
 import Repositories from './Repositories';
 import { repositoriesResponse } from '../../common/sampleApiResponses';

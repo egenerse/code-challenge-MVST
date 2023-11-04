@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Meta, StoryObj } from '@storybook/react';
 import GitHubInfo from './GitHubInfo';
 import { MemoryRouter } from 'react-router-dom';

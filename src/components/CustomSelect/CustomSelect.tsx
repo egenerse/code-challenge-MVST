@@ -39,7 +39,7 @@ export default function CustomSelect({ options, onChange, style }: CustomSelectP
           <Typography>All</Typography>
         </MenuItem>
         {options?.map((option) => (
-          <MenuItem value={option.value}>
+          <MenuItem value={option.value} key={option.label}>
             <Typography>{option.label}</Typography>
           </MenuItem>
         ))}

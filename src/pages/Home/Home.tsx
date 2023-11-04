@@ -35,6 +35,7 @@ export default function Home() {
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <InputLabel htmlFor="username">Username: </InputLabel>
           <TextField
+            data-testid="inputUsername"
             sx={{ marginLeft: 1 }}
             id="username"
             value={username}

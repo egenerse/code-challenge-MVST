@@ -8,14 +8,14 @@ import NavBar from './components/NavBar';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const apiKey = import.meta.env.VITE_GITHUB_API_KEY;
-const graphqlAPIURL = import.meta.env.VITE_GRAPHQL_API_URL
-const authorization = apiKey && `Bearer ${apiKey}`
+const graphqlAPIURL = import.meta.env.VITE_GRAPHQL_API_URL;
+const authorization = apiKey && `Bearer ${apiKey}`;
 
 const client = new ApolloClient({
   uri: graphqlAPIURL,
   cache: new InMemoryCache(),
   headers: {
-    Authorization: authorization
+    Authorization: authorization,
   },
 });
 
