@@ -38,7 +38,7 @@ export default function Profile({
         gap: 1,
       }}
     >
-      <img src={profilePicUrl} style={{ width: 250, height: 250, borderRadius: 200 }} />
+      <img src={profilePicUrl} style={{ width: '20vw', height: '20vw', minWidth: 80, minHeight: 80, maxWidth: 200, maxHeight: 200, borderRadius: 200, border: '2px solid #999', boxShadow: '5px 5px 5px #999' }} />
 
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         {login && <Typography variant="h4">{login}</Typography>}
@@ -48,11 +48,10 @@ export default function Profile({
           </Typography>
         )}
         {bio && <Typography>{bio}</Typography>}
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
           {(totalFollower || totalFollowing) && <PeopleOutlineOutlinedIcon style={{ color: '#000' }} />}
           {totalFollower && <Typography>{totalFollower} followers</Typography>}
-          {totalFollower && totalFollowing && <Typography marginLeft={totalFollower && 1}>·</Typography>}
-          {totalFollowing && <Typography marginLeft={totalFollower && 1}>{totalFollowing} following</Typography>}
+          {totalFollowing && <Typography marginLeft={totalFollower && 1}>{totalFollower && '· '}{totalFollowing} following</Typography>}
         </Box>
         {location && (
           <Typography sx={{ display: 'flex', alignItems: 'center' }}>
