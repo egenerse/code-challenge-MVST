@@ -33,9 +33,9 @@ export default function ProfileCard({
         flex: 2,
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
         padding: 2,
         gap: 1,
+
       }}
     >
       <img
@@ -43,8 +43,8 @@ export default function ProfileCard({
         style={{
           width: '20vw',
           height: '20vw',
-          minWidth: 80,
-          minHeight: 80,
+          minWidth: 160,
+          minHeight: 160,
           maxWidth: 200,
           maxHeight: 200,
           borderRadius: 200,
