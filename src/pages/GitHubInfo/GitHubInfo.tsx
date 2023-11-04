@@ -8,8 +8,16 @@ import ProfileCard from '@components/ProfileCard';
 import Loading from '@pages/Loading';
 import Repositories from '@/components/Repositories';
 
+/**
+ * GitHubInfo component displays GitHub user information and repositories based on the provided username.
+ *
+ * @returns {JSX.Element} The GitHubInfo component that shows user information and repositories.
+ */
 export default function GitHubInfo() {
+  // Extracts the "username" parameter from the URL using React Router.
   const { username } = useParams();
+
+  // Queries GitHub user information using Apollo Client.
   const { data, loading, error } = useQuery<User>(getUserGithubInfo, {
     variables: { username },
   });
@@ -17,6 +25,7 @@ export default function GitHubInfo() {
   const user = data?.user;
 
   if (loading) return <Loading />;
+
   if (!user) return <UserNotFound />;
   if (error) return <ErrorPage />;
 

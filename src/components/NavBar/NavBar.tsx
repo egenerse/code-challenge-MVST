@@ -2,6 +2,12 @@ import { Home } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
 import { Outlet, useNavigate } from 'react-router-dom';
 
+/**
+ * Navigation bar component for the application.
+ * It displays a home button and content outlet for routing.
+ *
+ * @returns A React component that renders the navigation bar.
+ */
 export default function NavBar() {
   const navigate = useNavigate();
   return (

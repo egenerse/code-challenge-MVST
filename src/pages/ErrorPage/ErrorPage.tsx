@@ -1,6 +1,11 @@
 import { Box, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Error page component to display a message and a button for navigating to the home page.
+ *
+ * @returns A React component that renders an error message and a button for navigation.
+ */
 export default function ErrorPage() {
   const navigate = useNavigate();
   return (
