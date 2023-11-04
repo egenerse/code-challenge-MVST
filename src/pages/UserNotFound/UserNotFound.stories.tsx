@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import UserNotFound from './UserNotFound';
-import { createRouterWithStory } from '../../utils/storybookUtils';
+import { createRouterWithStory } from '@utils/storybookUtils';
 
 const meta = {
   title: 'Pages/UserNotFound',

@@ -1,3 +1,4 @@
+import { Home } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
 import { Outlet, useNavigate } from 'react-router-dom';
 
@@ -18,11 +19,12 @@ export default function NavBar() {
           backgroundImage: 'linear-gradient(to bottom,  pink, white)',
         }}
       >
-        <Button variant="outlined" onClick={() => navigate('/')}>
-          <Typography>Home</Typography>
+        <Button variant="contained" onClick={() => navigate('/')}>
+          <Home />
+          <Typography sx={{ color: '#fff', marginLeft: 1 }}> Home</Typography>
         </Button>
       </Box>
-      <Box sx={{ marginTop: 6, height: '100%' }}>
+      <Box sx={{ marginTop: 7, height: '100%' }}>
         <Outlet />
       </Box>
     </Box>

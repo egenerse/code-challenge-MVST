@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import Repositories from '../../components/Repositories';
 import { useQuery } from '@apollo/client';
-import { User, getUserGithubInfo } from '../../graphql/queries/getUserGithubInfo';
-import UserNotFound from '../UserNotFound';
-import ErrorPage from '../ErrorPage/ErrorPage';
-import ProfileCard from '../../components/ProfileCard';
-import Loading from '../Loading';
+import { User, getUserGithubInfo } from '@graphql/queries/getUserGithubInfo';
+import UserNotFound from '@pages/UserNotFound';
+import ErrorPage from '@pages/ErrorPage';
+import ProfileCard from '@components/ProfileCard';
+import Loading from '@pages/Loading';
+import Repositories from '@/components/Repositories';
 
 export default function GitHubInfo() {
   const { username } = useParams();

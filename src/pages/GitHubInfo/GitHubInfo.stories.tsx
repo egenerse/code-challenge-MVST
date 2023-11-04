@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import GitHubInfo from './GitHubInfo';
-import { getUserGithubInfo } from '../../graphql/queries/getUserGithubInfo';
-import { UserResponse } from '../../common/sampleApiResponses';
-import { createRouterWithStory } from '../../utils/storybookUtils';
+import { getUserGithubInfo } from '@graphql/queries/getUserGithubInfo';
+import { UserResponse } from '@common/sampleApiResponses';
+import { createRouterWithStory } from '@utils/storybookUtils';
 
 const meta = {
   title: 'Pages/GitHubInfo',

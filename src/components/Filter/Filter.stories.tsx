@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Filter from './Filter';
-import { repositoriesResponse } from '../../common/sampleApiResponses';
+import { repositoriesResponse } from '@common/sampleApiResponses';
 
 const meta = {
   title: 'Components/Filter',

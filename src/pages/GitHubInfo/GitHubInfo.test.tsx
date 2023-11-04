@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import GitHubInfo from '.';
 import { BrowserRouter } from 'react-router-dom';
 import { MockedProvider } from '@apollo/client/testing';
-import { getUserGithubInfo } from '../../graphql/queries/getUserGithubInfo';
-import { UserResponse } from '../../common/sampleApiResponses';
+import { getUserGithubInfo } from '@graphql/queries/getUserGithubInfo';
+import { UserResponse } from '@common/sampleApiResponses';
 
 const useNavigateFunction = vi.fn();
 const username = 'egenerse';

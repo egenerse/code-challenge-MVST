@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Repositories from './Repositories';
-import { repositoriesResponse } from '../../common/sampleApiResponses';
-
-import { createRouterWithStory } from '../../utils/storybookUtils';
+import { repositoriesResponse } from '@common/sampleApiResponses';
+import { createRouterWithStory } from '@utils/storybookUtils';
 
 const meta = {
   title: 'Components/Repositories',

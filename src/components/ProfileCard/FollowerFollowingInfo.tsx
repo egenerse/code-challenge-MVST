@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
-import { isNumber } from '../../utils/typeCheck';
+import { isNumber } from '@utils/typeCheck';
 
 interface FollowerFollowingInfoProps {
   totalFollower?: number;

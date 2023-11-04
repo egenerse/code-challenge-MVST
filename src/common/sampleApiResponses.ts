@@ -1,4 +1,4 @@
-import { Repo, User } from '../graphql/queries/getUserGithubInfo';
+import { Repo, User } from '@graphql/queries/getUserGithubInfo';
 
 export const repositoriesResponse: Repo[] = [
   {

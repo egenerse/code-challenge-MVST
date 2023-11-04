@@ -14,7 +14,7 @@ export default function NotFoundPage() {
           navigate('/');
         }}
       >
-        <Typography>Go To Home Page</Typography>
+        <Typography sx={{ color: '#fff' }}>Go To Home Page</Typography>
       </Button>
     </Box>
   );

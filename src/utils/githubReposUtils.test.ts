@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest';
 import { getDifferentLanguagesOptions, getFilterdRepositories } from './githubReposUtils';
-import { repositoriesResponse } from '../common/sampleApiResponses';
-import { Repo } from '../graphql/queries/getUserGithubInfo';
+import { repositoriesResponse } from '@common/sampleApiResponses';
+import { Repo } from '@graphql/queries/getUserGithubInfo';
 
 const filteredReposByOnlyQuery: Repo[] = [
   {

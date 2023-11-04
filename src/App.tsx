@@ -1,11 +1,11 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import NotFoundPage from './pages/NotFoundPage';
-import Home from './pages/Home/Home';
-import GitHubInfo from './pages/GitHubInfo';
+import GitHubInfo from '@pages/GitHubInfo';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ErrorPage from './pages/ErrorPage';
-import NavBar from './components/NavBar';
+import ErrorPage from '@pages/ErrorPage';
+import NavBar from '@components/NavBar';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import Home from '@pages/Home';
+import NotFoundPage from '@pages/NotFoundPage';
 
 const apiKey = import.meta.env.VITE_GITHUB_API_KEY;
 const graphqlAPIURL = import.meta.env.VITE_GRAPHQL_API_URL;
