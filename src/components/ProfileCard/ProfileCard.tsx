@@ -35,7 +35,6 @@ export default function ProfileCard({
         alignItems: 'center',
         padding: 2,
         gap: 1,
-
       }}
     >
       <img

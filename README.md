@@ -17,18 +17,19 @@ LET'S CREATE THE KEY
 - From the left menu go to Developer Settings (it must be in the bottom)
 - Click Personal Access tokens, and select Token (clasic)
 - Click Generate new token by selecting "Generate new token (clasic)"
-- My application only needs "read:userRead ALL user profile data" permission under user section. Select only this option to minimize power of the token 
+- My application only needs "read:userRead ALL user profile data" permission under user section. Select only this option to minimize power of the token
 - Generate token and save it somewhere.
 
 TIME TO USE TOKEN
 
-- Go to project root and open .env file. 
+- Go to project root and open .env file.
 - set VITE_GITHUB_API_KEY = '' with the newly created token. place token between the quotes
 
 example
+
 ```js
-VITE_GITHUB_API_KEY ='ghp_CX5Bt_RANDOM_STUFF_sdFZ464NB9Su'
-VITE_GRAPHQL_API_URL = 'https://api.github.com/graphql'
+VITE_GITHUB_API_KEY = 'ghp_CX5Bt_RANDOM_STUFF_sdFZ464NB9Su';
+VITE_GRAPHQL_API_URL = 'https://api.github.com/graphql';
 ```
 
 Project uses the node version 18.12.0 and npm package manager\
@@ -37,7 +38,7 @@ User can run 'nvm use' to switch node version. [helper link to setup nvm](https:
 ## Run
 
 - Navigate to project root folder.
-- install packages  `npm install`
+- install packages `npm install`
 - run dev server `npm run dev`
 
 ## Tests
@@ -65,7 +66,6 @@ Project is deployed to Vercel. Whenever there is a new push in the github reposi
 - Adding pagination with graphql so even if user has more than 100 repositories project can handle.
 - Github restful api does bot require api key so it can be added to project with another flow.
 - Not all components have tests. More tests can be added.
-
 
 ## Coverage
 
