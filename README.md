@@ -1,27 +1,64 @@
-# React + TypeScript + Vite
+# MVST Code Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This project is developed for the MVST code challenge.
+- Its primary objective is to search for repositories based on GitHub usernames and perform filtering operations based on repository names or the programming languages used in those repositories.
 
-Currently, two official plugins are available:
+## Known issues with yarn & stroybook
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I initially tried using the Yarn package manager, but I ran into errors in Storybook that required some workarounds. Eventually, I fixed the problem by upgrading Yarn, although I would have rather avoided it. [Related Yarn issue and solutin](https://github.com/storybookjs/storybook/issues/22431#issuecomment-1630086092)
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Github graphqlAPI is used in the project so to make any search user needs to set API key
 
-- Configure the top-level `parserOptions` property like this:
+LETS CREATE THE KEY
 
+- First of create a github user account and navigate to [settings/profile](https://github.com/settings/profile)
+- From the left menu go to Developer Settings (it must be in the bottom)
+- Click Personal Access tokens, and select Token (clasic)
+- Click Generate new token by selecting "Generate new token (clasic)"
+- My application only needs "read:userRead ALL user profile data" permission under user section. Select only this option to minimize power of the token 
+- Generate token and save it somewhere.
+
+TIME TO USE TOKEN
+
+- Go to project root and open .env file. 
+- set VITE_GITHUB_API_KEY = '' with the newly created token. place token between the quotes
+
+example
 ```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+VITE_GITHUB_API_KEY ='ghp_CX5Bt_RANDOM_STUFF_sdFZ464NB9Su'
+VITE_GRAPHQL_API_URL = 'https://api.github.com/graphql'
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Project uses the node version 18.12.0 and npm package manager\
+User can run 'nvm use' to switch node version. [helper link to setup nvm](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
+
+## Run
+
+- Navigate to project root folder.
+- install packages  `npm install`
+- run dev server `npm run dev`
+
+## Tests
+
+Project has tests and user can run tests.
+
+- To run tests: `npm run test`
+
+## Storybook
+
+Project has storybook and user check stroybook. Storybook has components and pages. It has also control form to edit props used in the components and pages so feel free to dig in.
+
+- To start storybook: `npm run storybook`
+
+## Deploymen
+
+Project is deployed to Vercel. Whenever there is a new push in the github repository main branch, vercel build the page from the latest changes\
+
+[Deployed Project](https://code-challenge-mvst-saqev1125-egenerse.vercel.app/)
+
+## Coverage
+
+Aim is creating a table here to show test coverage\
+[Coverage Report](coverage/coverage-final.json)
