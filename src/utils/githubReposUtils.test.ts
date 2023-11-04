@@ -1,4 +1,3 @@
-// sum.test.js
 import { expect, test } from 'vitest';
 import { getDifferentLanguagesOptions, getFilterdRepositories } from './githubReposUtils';
 import { repositoriesResponse } from '../common/sampleApiResponses';

@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
-import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import FollowerFollowingInfo from './FollowerFollowingInfo';
 
 interface ProfileCardProps {
   login: string;
@@ -61,16 +61,7 @@ export default function ProfileCard({
           </Typography>
         )}
         {bio && <Typography>{bio}</Typography>}
-        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-          {(totalFollower || totalFollowing) && <PeopleOutlineOutlinedIcon style={{ color: '#000' }} />}
-          {totalFollower && <Typography>{totalFollower} followers</Typography>}
-          {totalFollowing && (
-            <Typography marginLeft={totalFollower && 1}>
-              {totalFollower && '· '}
-              {totalFollowing} following
-            </Typography>
-          )}
-        </Box>
+        <FollowerFollowingInfo totalFollower={totalFollower} totalFollowing={totalFollowing} />
         {location && (
           <Typography sx={{ display: 'flex', alignItems: 'center' }}>
             <LocationOnOutlinedIcon />
