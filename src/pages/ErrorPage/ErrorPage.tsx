@@ -17,6 +17,7 @@ export default function ErrorPage() {
     >
       <Typography>Upps something went wrong, You can go to Home page for searching user</Typography>
       <Button
+        data-testid="goHomeButton"
         variant="contained"
         onClick={() => {
           navigate('/');

@@ -3,7 +3,7 @@ import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-interface ProfileProps {
+interface ProfileCardProps {
   login: string;
   name?: string;
   avatarUrl?: string;
@@ -14,7 +14,7 @@ interface ProfileProps {
   location?: string;
 }
 
-export default function Profile({
+export default function ProfileCard({
   login,
   name,
   avatarUrl,
@@ -23,7 +23,7 @@ export default function Profile({
   bio,
   email,
   location,
-}: ProfileProps) {
+}: ProfileCardProps) {
   const profilePicUrl =
     avatarUrl || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxUymmzhlE6KKfRnyEwaYbibNr3FYHz32sZg&usqp=CAU';
   return (

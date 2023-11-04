@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import { User, getUserGithubInfo } from '../../graphql/queries/getUserGithubInfo';
 import UserNotFound from '../UserNotFound';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import Profile from '../../components/Profile';
+import ProfileCard from '../../components/ProfileCard';
 import Loading from '../Loading';
 
 export default function GitHubInfo() {
@@ -28,7 +28,7 @@ export default function GitHubInfo() {
         Welcome to GitHub Repositories for {username}
       </Typography>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 2 }}>
-        <Profile
+        <ProfileCard
           login={user.login}
           name={user?.name}
           avatarUrl={user?.avatarUrl}

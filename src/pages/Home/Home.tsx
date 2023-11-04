@@ -47,7 +47,13 @@ export default function Home() {
             }}
           />
         </Box>
-        <Button variant="contained" sx={{ margin: 2 }} onClick={handlePress} disabled={username === ''}>
+        <Button
+          data-testid="searchButton"
+          variant="contained"
+          sx={{ margin: 2 }}
+          onClick={handlePress}
+          disabled={username === ''}
+        >
           Search
         </Button>
       </Box>
