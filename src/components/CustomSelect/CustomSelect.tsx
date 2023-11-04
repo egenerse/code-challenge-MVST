@@ -28,12 +28,11 @@ interface CustomSelectProps {
 export default function CustomSelect({ options, onChange, style }: CustomSelectProps) {
   const [value, setValue] = useState('');
 
-
   /**
- * Handles the change event when a new value is selected in the dropdown.
- *
- * @param {Object} event - The change event object.
- */
+   * Handles the change event when a new value is selected in the dropdown.
+   *
+   * @param {Object} event - The change event object.
+   */
   const handleOnChange = (event: SelectChangeEvent<string>) => {
     const newSelectedLanguage = event.target.value;
     setValue(newSelectedLanguage);

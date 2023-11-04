@@ -29,7 +29,6 @@ export default function Filter({ repositories, handleShownRepositories }: Filter
     handleShownRepositories(filteredRepos);
   };
 
-
   // Handle change in the selected programming language.
   const handleLanguageChange = (newSelectedLanguage: string) => {
     const filteredRepos = getFilterdRepositories(repositories, searchQuery, newSelectedLanguage);
