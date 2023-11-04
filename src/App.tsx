@@ -7,11 +7,14 @@ import ErrorPage from './pages/ErrorPage';
 import NavBar from './components/NavBar';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
+const apiKey = import.meta.env.VITE_GITHUB_API_KEY;
+const graphqlAPIURL = import.meta.env.VITE_GRAPHQL_API_URL
+
 const client = new ApolloClient({
-  uri: 'https://api.github.com/graphql',
+  uri: graphqlAPIURL,
   cache: new InMemoryCache(),
   headers: {
-    Authorization: `Bearer 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`,
+    Authorization: `Bearer ${apiKey}`,
   },
 });
 
