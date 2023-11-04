@@ -11,7 +11,7 @@ I initially tried using the Yarn package manager, but I ran into errors in Story
 
 Github graphqlAPI is used in the project so to make any search user needs to set API key
 
-LETS CREATE THE KEY
+LET'S CREATE THE KEY
 
 - First of create a github user account and navigate to [settings/profile](https://github.com/settings/profile)
 - From the left menu go to Developer Settings (it must be in the bottom)
@@ -52,11 +52,20 @@ Project has storybook and user check stroybook. Storybook has components and pag
 
 - To start storybook: `npm run storybook`
 
-## Deploymen
+## Deployment
 
-Project is deployed to Vercel. Whenever there is a new push in the github repository main branch, vercel build the page from the latest changes\
+Project is deployed to Vercel. Whenever there is a new push in the github repository main branch, Vercel builds the page from the latest changes\
 
 [Deployed Project](https://code-challenge-mvst-saqev1125-egenerse.vercel.app/)
+
+## Potential Improvement
+
+- Using TypeScript GraphQL Code Generator for types.
+- Rightnow github graphql query is fetching the first 100 repositories. If user has more than that it is not seen in the application.
+- Adding pagination with graphql so even if user has more than 100 repositories project can handle.
+- Github restful api does bot require api key so it can be added to project with another flow.
+- Not all components have tests. More tests can be added.
+
 
 ## Coverage
 
